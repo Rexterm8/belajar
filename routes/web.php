@@ -45,3 +45,10 @@ route::get('/post/{slug}',function($slug){
     ]);
 
 });
+
+route::get('/bambam',function($slug){
+
+    return "HelloWorld";
+
+});
+
