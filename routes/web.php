@@ -3,6 +3,8 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UMKMController;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -17,13 +19,13 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('Home',[
-       "title" => "Home"
+    return view('Home', [
+        "title" => "Home"
     ]);
 });
 
 Route::get('/about', function () {
-    return view('About',[
+    return view('About', [
         "title" => "About",
         "name" => "Julianto",
         "email" => "julianto007@binus.ac.id",
@@ -33,5 +35,11 @@ Route::get('/about', function () {
 
 Route::get('/posts', [PostController::class, 'index']);
 
-route::get('/post/{slug}',[PostController::class, 'show']);
+Route::get('/post/{slug}', [PostController::class, 'show']);
 
+
+Route::get('/profile', [ProfileController::class, 'index']);
+
+Route::get('/umkm/{a}', [UMKMController::class, 'a']);
+
+// www.example.com/umkm/a -> wwww.example.com/umkm/b

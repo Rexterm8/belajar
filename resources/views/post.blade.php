@@ -12,7 +12,7 @@
     <h3>By: {{ $post["author"] }}</h3>
     <p>{{ $post["body"] }}</p>
     </article>
-    <a href="/posts">Back to Post</a>
+    <a href="/posts/">Back to Post</a>
 
 
 @endsection
