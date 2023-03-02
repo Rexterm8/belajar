@@ -11,7 +11,7 @@ class ProfileController extends Controller
     {
         return view('profile', [
             "id" => 1,
-            "nama" => 'Jualianto',
+            "nama" => 'Julianto',
             "nim" => 2440056820
         ]);
 

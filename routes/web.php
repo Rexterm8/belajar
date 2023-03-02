@@ -40,6 +40,6 @@ Route::get('/post/{slug}', [PostController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'index']);
 
-Route::get('/umkm/{a}', [UMKMController::class, 'a']);
+Route::get('/umkm/{a}', [UMKMController::class, 'gg']);
 
 // www.example.com/umkm/a -> wwww.example.com/umkm/b

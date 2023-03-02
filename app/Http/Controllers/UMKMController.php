@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class UMKMController extends Controller
 {
-    public function a($a){
+    public function gg($a){
         return view ('/umkm',[
             'id'=>'a',
             'nama'=>$a
