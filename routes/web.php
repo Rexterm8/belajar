@@ -35,11 +35,11 @@ Route::get('/about', function () {
 
 Route::get('/posts', [PostController::class, 'index']);
 
-Route::get('/post/{slug}', [PostController::class, 'show']);
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
 
 Route::get('/profile', [ProfileController::class, 'index']);
 
-Route::get('/umkm/{a}', [UMKMController::class, 'gg']);
+Route::get('/umkm/{id?}', [UMKMController::class, 'gg']);
 
 // www.example.com/umkm/a -> wwww.example.com/umkm/b
