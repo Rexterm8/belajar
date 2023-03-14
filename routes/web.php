@@ -7,6 +7,7 @@ use App\Http\Controllers\UMKMController;
 use App\Http\Controllers\ProfileController;
 
 use App\Models\Category;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +53,12 @@ Route::get('/categories/{category:slug}', function(Category $category){
     ]);
 });
 
+Route::get('/authors/{author:username}', function(User $author){
+    return view('posts',[
+        'title' => 'User Posts',
+        'posts' => $author->posts
+    ]);
+});
 
 
 Route::get('/profile', [ProfileController::class, 'index']);
