@@ -2,7 +2,7 @@
 @extends("layouts.main")
 
 @section("container")
-<h3>Halaman Blog</h3>
+<h3>{{ $title }}</h3>
 
 @foreach ($posts as $post )
 <article class="mb-5 border-bottom pb-4">
