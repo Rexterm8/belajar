@@ -2,9 +2,11 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UMKMController;
 use App\Http\Controllers\ProfileController;
+
 
 use App\Models\Category;
 use App\Models\User;
@@ -23,6 +25,18 @@ Route::get('/', function () {
     return view('Home', [
         "title" => "Home"
     ]);
+});
+
+Route::get('tes', function (Request $request){
+    return 'testing';
+});
+
+Route::match(['get', 'poste'], 'url-match', function(Request $request){
+    if($request->isMethod('post'));
+        return 'Route POST';
+    endif;
+
+    return 'Route GET';
 });
 
 Route::get('/about', function () {
@@ -63,5 +77,20 @@ Route::get('/authors/{author:username}', function(User $author){
 Route::get('/profile', [ProfileController::class, 'index']);
 
 Route::get('/umkm/{id?}', [UMKMController::class, 'gg']);
+
+Route::get('get-request', function(Request $request){
+    $uri = $request->path();
+    $url = $request->url();
+
+    $urlWithQueryString = $request->fullUrl();
+
+    $host = $request->host();
+    $httpHost = $request->httpHost();
+    $schemaHttpHost = $request->schemeAndHttpHost();
+
+    $ipAddress = $request->ip();
+
+    return $ipAddress;
+});
 
 // www.example.com/umkm/a -> wwww.example.com/umkm/b
